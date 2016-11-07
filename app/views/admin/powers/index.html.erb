@@ -1,0 +1,44 @@
+<h1 class="pagetitle">Magic</h1>
+
+<table class="non-fixed">
+	<%= will_paginate @powers %>
+	<caption><%= link_to 'Add Magic', new_admin_power_path %></caption>
+	<thead>
+		<th class="top" scope="col"><%= sort_link 'Name', :name %></th>
+		<th class="top" scope="col"><%= sort_link 'Attack', :attack %></th>
+		<th class="top" scope="col"><%= sort_link 'Defense', :defense %></th>
+		<th class="top" scope="col"><%= sort_link 'eAttack', :e_attack %></th>
+		<th class="top" scope="col"><%= sort_link 'eDefense', :e_defense %></th>
+		<th class="top" scope="col"><%= sort_link 'Base Cost', :base_cost %></th>
+		<th class="top" scope="col"><%= sort_link 'Upkeep', :upkeep %></th>
+		<th class="top" scope="col"><%= sort_link 'DP', :div_power %></th>
+		<th class="top" scope="col"><%= sort_link 'Pierce', :piercing %></th>
+		<th class="top" scope="col"><%= sort_link 'Res', :resistance %></th>
+		<th class="top" scope="col">Options</th>
+	</thead>
+	
+	<% @powers.each do |power| %>
+		<tr>
+			<th scope="row">
+				<%= image_tag power.image_path(:thumb), :alt  => "#{power.name}",
+					:style => 'float:left', :size => "50x50" %>
+				<%= link_to power.name, power_path(power) %>
+			</th>
+			<td><%= power.attack %></td>
+			<td><%= power.defense %></td>
+			<td><%= power.e_attack %></td>
+			<td><%= power.e_defense %></td>
+			<td><%= number_to_currency(power.base_cost) %></td>
+			<td><%= number_to_currency(power.upkeep) %></td>
+			<td><%= power.div_power %></td>
+			<td><%= power.piercing %></td>
+			<td><%= power.resistance %></td>
+			<td>
+				<%= link_to '[Edit]', edit_admin_power_path(power) %>
+				<% if current_user.is_admin? && power.is_unowned? %>
+        	<%= link_to '[Destroy]', admin_power_path(power), :confirm => 'Are you sure?', :method => :delete %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>

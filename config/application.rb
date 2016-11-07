@@ -9,14 +9,14 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module RailsApp
+module Copter2
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/app/models/generals)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -54,6 +54,7 @@ module RailsApp
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
+    config.assets.initialize_on_precompile = false
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets

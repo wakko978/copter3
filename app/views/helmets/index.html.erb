@@ -1,0 +1,38 @@
+<h1>Listing Helmets available in Castle Age</h1>
+
+<table class="non-fixed">
+	<%= will_paginate @helmets %>
+	<thead>
+		<th class="top" scope="col"><%= sort_link 'Name', :name %></th>
+		<th class="top" scope="col"><%= sort_link 'Attack', :attack %></th>
+		<th class="top" scope="col"><%= sort_link 'Defense', :defense %></th>
+		<th class="top" scope="col"><%= sort_link 'eAttack', :e_attack %></th>
+		<th class="top" scope="col"><%= sort_link 'eDefense', :e_defense %></th>
+		<th class="top" scope="col"><%= sort_link 'Base Cost', :base_cost %></th>
+		<th class="top" scope="col"><%= sort_link 'Upkeep', :upkeep %></th>
+		<th class="top" scope="col"><%= sort_link 'DP', :div_power %></th>
+		<th class="top" scope="col"><%= sort_link 'Slots', :slots %></th>
+		<th class="top" scope="col"><%= sort_link 'Pierce', :piercing %></th>
+		<th class="top" scope="col"><%= sort_link 'Res', :resistance %></th>
+	</thead>
+	
+	<% @helmets.each do |helmet| %>
+		<tr>
+			<th scope="row">
+				<%= image_tag helmet.image_path(:thumb), :alt  => "#{helmet.name}",
+					:style => 'float:left', :size => "50x50" %>
+				<%= link_to helmet.name, helmet_path(helmet) %>
+			</th>
+			<td><%= helmet.attack %></td>
+			<td><%= helmet.defense %></td>
+			<td><%= helmet.e_attack %></td>
+			<td><%= helmet.e_defense %></td>
+			<td><%= number_to_currency(helmet.base_cost) %></td>
+			<td><%= number_to_currency(helmet.upkeep) %></td>
+			<td><%= helmet.div_power %></td>
+			<td><%= helmet.slots %></td>
+			<td><%= helmet.piercing %></td>
+			<td><%= helmet.resistance %></td>
+		</tr>
+	<% end %>
+</table>

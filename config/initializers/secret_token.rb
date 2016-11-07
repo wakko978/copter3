@@ -1,14 +1,7 @@
-
-require File.join(Rails.root,'lib','openshift_secret_generator.rb')
 # Be sure to restart your server when you modify this file.
 
 # Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-
-# Set token based on intialize_secret function (defined in initializers/secret_generator.rb)
-RailsApp::Application.config.secret_token = initialize_secret(
-  :token,
-  '335a4e365ef2daeea969640d74e18f0e3cd9fae1abd8f4125691a880774ea6d456a29c0831aa6921bf86a710fe555e916f0673f5657619ec9df22e0409bec345'
-)
+Copter2::Application.config.secret_token = 'ef35efb31d966e35558d15572477888df8b886f51d9a8afa5e1a88b0f35ca5b6a0387c55196f5c8d4eb200c4bab4d78d5e58d7f9b02a5d130f46d47e4a220984'

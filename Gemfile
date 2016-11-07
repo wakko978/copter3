@@ -1,38 +1,43 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.16'
-gem 'rack', '~> 1.4.5'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :production, :mysql do
-  gem 'mysql2'
-end
-
-group :production, :postgresql do
-  gem 'pg'
-end
-
-group :development, :test do
-  gem 'sqlite3'
-  gem 'minitest'
-  gem 'thor', '= 0.14.6'
-end
+gem 'devise'
+gem 'will_paginate', '~> 3.0.0'
+gem 'nokogiri'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'yui-compressor'
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'mysql2'
+gem 'newrelic_rpm'
+
+group :development do
+  # gem 'seed_dump'
+  gem 'thin'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'debugger'
+end
+
+group :production do
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,0 +1,30 @@
+<h1 class="pagetitle">Lands</h1>
+
+<table class="non-fixed">
+	<%= will_paginate @lands %>
+	<caption><%= link_to 'Add Land', new_admin_land_path %></caption>
+	<thead>
+		<th class="top" scope="col"><%= sort_link 'Name', :name %></th>
+		<th class="top" scope="col"><%= sort_link 'Base Cost', :base_cost %></th>
+		<th class="top" scope="col"><%= sort_link 'Income', :income %></th>
+		<th class="top" scope="col">Options</th>
+	</thead>
+	
+	<% @lands.each do |land| %>
+		<tr>
+			<th scope="row">
+				<%= image_tag land.image_path(:thumb), :alt  => "#{land.name}",
+					:style => 'float:left', :size => "50x25" %>
+				<%= link_to land.name, land_path(land) %>
+			</th>
+			<td><%= number_to_currency(land.base_cost) %></td>
+			<td><%= number_to_currency(land.income) %></td>
+			<td>
+				<%= link_to '[Edit]', edit_admin_land_path(land) %>
+				<% if current_user.is_admin? %>
+        	<%= link_to '[Destroy]', admin_land_path(land), :confirm => 'Are you sure?', :method => :delete %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>

@@ -1,0 +1,38 @@
+<h1>Listing Gloves available in Castle Age</h1>
+
+<table class="non-fixed">
+	<%= will_paginate @gloves %>
+	<thead>
+		<th class="top" scope="col"><%= sort_link 'Name', :name %></th>
+		<th class="top" scope="col"><%= sort_link 'Attack', :attack %></th>
+		<th class="top" scope="col"><%= sort_link 'Defense', :defense %></th>
+		<th class="top" scope="col"><%= sort_link 'eAttack', :e_attack %></th>
+		<th class="top" scope="col"><%= sort_link 'eDefense', :e_defense %></th>
+		<th class="top" scope="col"><%= sort_link 'Base Cost', :base_cost %></th>
+		<th class="top" scope="col"><%= sort_link 'Upkeep', :upkeep %></th>
+		<th class="top" scope="col"><%= sort_link 'DP', :div_power %></th>
+		<th class="top" scope="col"><%= sort_link 'Slots', :slots %></th>
+		<th class="top" scope="col"><%= sort_link 'Pierce', :piercing %></th>
+		<th class="top" scope="col"><%= sort_link 'Res', :resistance %></th>
+	</thead>
+	
+	<% @gloves.each do |glove| %>
+		<tr>
+			<th scope="row">
+				<%= image_tag glove.image_path(:thumb), :alt  => "#{glove.name}",
+					:style => 'float:left', :size => "50x50" %>
+				<%= link_to glove.name, glove_path(glove) %>
+			</th>
+			<td><%= glove.attack %></td>
+			<td><%= glove.defense %></td>
+			<td><%= glove.e_attack %></td>
+			<td><%= glove.e_defense %></td>
+			<td><%= number_to_currency(glove.base_cost) %></td>
+			<td><%= number_to_currency(glove.upkeep) %></td>
+			<td><%= glove.div_power %></td>
+			<td><%= glove.slots %></td>
+			<td><%= glove.piercing %></td>
+			<td><%= glove.resistance %></td>
+		</tr>
+	<% end %>
+</table>

@@ -1,0 +1,7 @@
+<%= content_for :body_onload do %>$('body').off('change','**')<% end %>
+
+<h1>New Profile</h1>
+
+<%= render :partial => "form" %>
+
+<%= link_to 'Back', :back %>

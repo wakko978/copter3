@@ -1,0 +1,38 @@
+<h1 class="pagetitle">Alliances for <%= @profile.name.html_safe %></h1>
+
+<%= render :partial => "faq" %>
+
+<span style="color: red; font-size:120%">The abilities are currently disabled for alliances. Stats propagation works.</span>
+
+<table class="non-fixed">
+	<caption>
+		<%= link_to "Create Alliance", new_profile_alliance_path(@profile) %>
+	</caption>
+	<thead>
+		<th class="top" scope="col" width="20%">Primary</th>
+		<th class="top" scope="col" width="20%">Secondary</th>
+		<th class="top" scope="col" width="20%">Tertiary</th>
+		<th class="top" scope="col" width="30%">Estimated Atk/Def</th>
+		<th class="top" scope="col" width="10%">Options</th>
+	</thead>
+
+	<% @alliances.each do |alliance| %>
+		<tr>
+			<td><%= alliance.primary.general.name %> (<%= alliance.primary.level %>)</td>
+			<td><%= alliance.secondary.general.name %> (<%= alliance.secondary.level %>)</td>
+			<td>
+				<% unless alliance.tertiary.nil? %>
+					<%= alliance.tertiary.general.name %> (<%= alliance.tertiary.level %>)
+				<% end %>
+			</td>
+			<td>
+				<%= alliance.primary.general.send("attack_with_mods",@profile,alliance.primary) %> /
+				<%= alliance.primary.general.send("defense_with_mods",@profile,alliance.primary) %>
+			</td>
+			<td>
+				<%= link_to '[Edit]', edit_profile_alliance_path(@profile,alliance) %>
+				<%= link_to '[Remove]', profile_alliance_path(@profile,alliance), :confirm => 'Are you sure?', :method => :delete %>
+			</td>
+		</tr>
+	<% end %>
+</table>

@@ -27,7 +27,12 @@ defaults: &defaults
   <<: *<%= ENV['RAILS_DB'] || "sqlite" %>
 
 development:
-  <<: *defaults
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  database: copter2_development
+  username: <%=ENV['MYSQL_DB_USERNAME']%>
+  password: <%=ENV['MYSQL_DB_PASSWORD']%>
 
 test: &test
   <<: *defaults

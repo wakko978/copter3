@@ -1,0 +1,38 @@
+<h1>Listing Shields available in Castle Age</h1>
+
+<table class="non-fixed">
+	<%= will_paginate @shields %>
+	<thead>
+		<th class="top" scope="col"><%= sort_link 'Name', :name %></th>
+		<th class="top" scope="col"><%= sort_link 'Attack', :attack %></th>
+		<th class="top" scope="col"><%= sort_link 'Defense', :defense %></th>
+		<th class="top" scope="col"><%= sort_link 'eAttack', :e_attack %></th>
+		<th class="top" scope="col"><%= sort_link 'eDefense', :e_defense %></th>
+		<th class="top" scope="col"><%= sort_link 'Base Cost', :base_cost %></th>
+		<th class="top" scope="col"><%= sort_link 'Upkeep', :upkeep %></th>
+		<th class="top" scope="col"><%= sort_link 'DP', :div_power %></th>
+		<th class="top" scope="col"><%= sort_link 'Slots', :slots %></th>
+		<th class="top" scope="col"><%= sort_link 'Pierce', :piercing %></th>
+		<th class="top" scope="col"><%= sort_link 'Res', :resistance %></th>
+	</thead>
+	
+	<% @shields.each do |shield| %>
+		<tr>
+			<th scope="row">
+				<%= image_tag shield.image_path(:thumb), :alt  => "#{shield.name}",
+					:style => 'float:left', :size => "50x50" %>
+				<%= link_to shield.name, shield_path(shield) %>
+			</th>
+			<td><%= shield.attack %></td>
+			<td><%= shield.defense %></td>
+			<td><%= shield.e_attack %></td>
+			<td><%= shield.e_defense %></td>
+			<td><%= number_to_currency(shield.base_cost) %></td>
+			<td><%= number_to_currency(shield.upkeep) %></td>
+			<td><%= shield.div_power %></td>
+      <td><%= shield.slots %></td>
+			<td><%= shield.piercing %></td>
+			<td><%= shield.resistance %></td>
+		</tr>
+	<% end %>
+</table>

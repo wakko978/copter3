@@ -1,0 +1,39 @@
+<h1 class="pagetitle"><%= @soldier.name %></h1>
+
+<%= image_tag @soldier.image_path(:original), :alt  => "#{@soldier.name}",
+	:style => 'float:right' %>
+
+<p>
+  <%= link_to "Lookup on Wiki", "http://castleage.wikia.com/wiki/Special:Search?fulltext=Search&search=#{@soldier.name}", :target => "_blank" %><br/>
+  http://castleage.wikia.com/wiki/Castle_Age_Wiki
+</p>
+
+<p>
+	<b>Type:</b> <%= @soldier.class.name.titleize %>
+</p>
+
+<p>
+	<b>Attack:</b> <%= @soldier.attack %>
+</p>
+
+<p>
+	<b>Defense:</b> <%= @soldier.defense %>
+</p>
+
+<p>
+	<b>eAttack:</b> <%= @soldier.e_attack %>
+</p>
+
+<p>
+	<b>eDefense:</b> <%= @soldier.e_defense %>
+</p>
+
+<p>
+	<b>Base Cost:</b> <%= number_to_currency(@soldier.base_cost) %>
+</p>
+
+<p>
+	<b>Upkeep:</b> <%= number_to_currency(@soldier.upkeep) %>
+</p>
+
+<%= link_to 'Back', soldiers_path %>

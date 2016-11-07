@@ -1,0 +1,46 @@
+<h1 class="pagetitle">Amulets</h1>
+
+<table class="non-fixed">
+	<%= will_paginate @amulets %>
+	<caption><%= link_to 'Add Amulet', new_admin_amulet_path %></caption>
+	<thead>
+		<th class="top" scope="col"><%= sort_link 'Name', :name %></th>
+		<th class="top" scope="col"><%= sort_link 'Attack', :attack %></th>
+		<th class="top" scope="col"><%= sort_link 'Defense', :defense %></th>
+		<th class="top" scope="col"><%= sort_link 'eAttack', :e_attack %></th>
+		<th class="top" scope="col"><%= sort_link 'eDefense', :e_defense %></th>
+		<th class="top" scope="col"><%= sort_link 'Base Cost', :base_cost %></th>
+		<th class="top" scope="col"><%= sort_link 'Upkeep', :upkeep %></th>
+		<th class="top" scope="col"><%= sort_link 'DP', :div_power %></th>
+		<th class="top" scope="col"><%= sort_link 'Slots', :slots %></th>
+		<th class="top" scope="col"><%= sort_link 'Pierce', :piercing %></th>
+		<th class="top" scope="col"><%= sort_link 'Res', :resistance %></th>
+		<th class="top" scope="col">Options</th>
+	</thead>
+	
+	<% @amulets.each do |amulet| %>
+		<tr>
+			<th scope="row">
+				<%= image_tag amulet.image_path(:thumb), :alt  => "#{amulet.name}",
+					:style => 'float:left', :size => "50x50" %>
+				<%= link_to amulet.name, amulet_path(amulet) %>
+			</th>
+			<td><%= amulet.attack %></td>
+			<td><%= amulet.defense %></td>
+			<td><%= amulet.e_attack %></td>
+			<td><%= amulet.e_defense %></td>
+			<td><%= number_to_currency(amulet.base_cost) %></td>
+			<td><%= number_to_currency(amulet.upkeep) %></td>
+			<td><%= amulet.div_power %></td>
+			<td><%= amulet.slots %></td>
+			<td><%= amulet.piercing %></td>
+			<td><%= amulet.resistance %></td>
+			<td>
+				<%= link_to '[Edit]', edit_admin_amulet_path(amulet) %>
+				<% if current_user.is_admin? && amulet.is_unowned? %>
+        	<%= link_to '[Destroy]', admin_amulet_path(amulet), :confirm => 'Are you sure?', :method => :delete %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>

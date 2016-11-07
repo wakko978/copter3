@@ -1,0 +1,98 @@
+<h1 class="pagetitle">Upload Keep, Generals, Soldiers, Items, Magic and Land for <%= @profile.name.html_safe %></h1>
+
+<%= render :partial => 'faq' %>
+
+<form id="my_form">
+	<table class="non-fixed">
+		<thead>
+			<th width="50%">File</th>
+			<th width="30%">Parse/Output</th>
+			<th width="20%">Options</th>
+		</thead>
+	
+		<tr>
+			<td>
+				<b>Keep:</b>
+				<%= file_field_tag 'keep_file', id: 'keep_file',
+					data: {url: profile_path(@profile), update: update_all_profile_path(@profile)} %>
+			</td>
+			<td rowspan="6">
+				<div id="parse_output" style="width: 200px; height:100px; overflow-y:scroll; border:1px inset grey">
+				</div>
+				<div id="data_output" style="width: 200px; height:100px; overflow-y:scroll; border:1px inset grey">
+				</div>
+			</td>
+			<td rowspan="6">
+				<input id="update_button" type="button" value="Update DB" />
+				<input id="reset_form" type="reset" value="Clear Form" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Generals:</b>
+				<%= file_field_tag 'general_file', id: 'general_file',
+					data: {url: profile_recruits_path(@profile), update: update_all_profile_recruits_path(@profile)} %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Soldiers:</b>
+				<%= file_field_tag 'soldier_file', id: 'soldier_file',
+					data: {url: profile_fighters_path(@profile), update: update_all_profile_fighters_path(@profile)} %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Items & Weapons:</b>
+				<%= file_field_tag 'item_file', id: 'item_file',
+					data: {url: profile_accessories_path(@profile), update: update_all_profile_accessories_path(@profile)} %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Magic:</b>
+				<%= file_field_tag 'magic_file', id: 'magic_file',
+					data: {url: profile_spells_path(@profile), update: update_all_profile_spells_path(@profile)} %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Land:</b>
+				<%= file_field_tag 'land_file', id: 'land_file',
+					data: {url: profile_properties_path(@profile), update: update_all_profile_properties_path(@profile)} %>
+			</td>
+		</tr>
+	</table>
+</form>
+
+<!-- If your browser is having trouble parsing files, <%#= link_to_function "Click here", "toggleDiv('sf_upload')" %>
+
+<br/>
+
+<div id="sf_upload" style="display:none">
+  <br/>
+  <%#= form_for @profile, :url => upload_file_profile_path(@profile), :method => 'post', :html => {:id => 'alt_form', :multipart => true} do |f| %>
+    <p>
+      I can take uploads and process them. I accept the following files:
+      <ul>
+        <li>generals.php, generals.php.html, generals.php.htm</li>
+        <li>soldiers.php, soldiers.php.html, soldiers.php.htm</li>
+        <li>magic.php, magic.php.html, magic.php.htm</li>
+        <li>item.php, item.php.html, item.php.htm</li>
+        <li>land.php, land.php.html, land.php.htm</li>
+        <li>keep.php, keep.php.html, keep.php.htm</li>
+      </ul>
+      <%#= label_tag "upload", "File" %><br/>
+      <%#= file_field_tag 'attachment',
+         :accept => 'text/html,text/php,application/php,text/x-php,application/x-php,application/x-httpd-php,application/x-httpd-php-source' %>
+    </p>
+
+    <p>
+      <%#= f.submit 'Process Single File' %>
+    </p>
+  <%# end %>
+</div> -->
+
+<br/>
+
+<%= link_to 'Back', :back %>

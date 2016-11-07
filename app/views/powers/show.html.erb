@@ -1,0 +1,51 @@
+<h1 class="pagetitle"><%= @power.name %></h1>
+
+<%= image_tag @power.image_path(:original), :alt  => "#{@power.name}",
+	:style => 'float:right' %>
+
+<p>
+  <%= link_to "Lookup on Wiki", "http://castleage.wikia.com/wiki/Special:Search?fulltext=Search&search=#{@power.name}", :target => "_blank" %><br/>
+  http://castleage.wikia.com/wiki/Castle_Age_Wiki
+</p>
+
+<p>
+	<b>Type:</b> <%= @power.class.name.titleize %>
+</p>
+
+<p>
+	<b>Attack:</b> <%= @power.attack %>
+</p>
+
+<p>
+	<b>Defense:</b> <%= @power.defense %>
+</p>
+
+<p>
+	<b>eAttack:</b> <%= @power.e_attack %>
+</p>
+
+<p>
+	<b>eDefense:</b> <%= @power.e_defense %>
+</p>
+
+<p>
+	<b>Base Cost:</b> <%= number_to_currency(@power.base_cost) %>
+</p>
+
+<p>
+	<b>Upkeep:</b> <%= number_to_currency(@power.upkeep) %>
+</p>
+
+<p>
+	<b>Divine Power:</b> <%= @power.div_power %>
+</p>
+
+<p>
+	<b>Piercing:</b> <%= @power.piercing %>
+</p>
+
+<p>
+	<b>Resistance:</b> <%= @power.resistance %>
+</p>
+
+<%= link_to 'Back', powers_path %>

@@ -1,0 +1,105 @@
+<%= form_for([:admin,@general.becomes(General)], :html => { :multipart => true }) do |f| %>
+  <% if @general.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@general.errors.count, "error") %> prohibited this general from being saved:</h2>
+
+      <ul>
+      <% @general.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+	  <%= f.label 'name' %><br/>
+	  <%= f.text_field :name %>
+	</p>
+
+	<p>
+	  <%= f.label 'attack', 'Attack' %><br/>
+	  <%= f.text_field :attack, :size => 10 %>
+		Increment when leveling: <%= f.text_field :attack_increment, :size => 10 %>
+	</p>
+
+	<p>
+	  <%= f.label 'defense', 'Defense' %><br/>
+	  <%= f.text_field :defense, :size => 10 %>
+		Increment when leveling: <%= f.text_field :defense_increment, :size => 10 %>
+	</p>
+
+	<p>
+	  <%= f.label 'base_cost', 'Base Cost' %><br/>
+	  <%= f.text_field :base_cost, :onblur => "changeFormat(this)" %>
+	</p>
+
+	<p>
+	  <%= f.label 'upkeep' %><br/>
+	  <%= f.text_field :upkeep, :onblur => "changeFormat(this)" %>
+	</p>
+	
+	<p>
+	  <%= f.label 'div_power', 'Divine Power' %><br/>
+	  <%= f.text_field :div_power, :size => 10 %>
+	</p>
+	
+	<p>
+	  <%= f.label 'general_type', 'General Type' %><br/>
+	  <%= f.select :general_type,
+	 		options_for_select(['Aggressive','Balanced','Defensive'],@general.general_type) %>
+	</p>
+	
+	<p>
+	  <%= f.label 'alliance_type', 'Alliance Type' %><br/>
+	  <%= f.select :alliance_type,
+	 		options_for_select(['piercing','resistance','monster_attack','damage','crits','deflect',
+				'cleric_splash','mage_splash','evade','whirlwind','healing'],@general.alliance_type), :include_blank => true %>
+	</p>
+	
+	<p>
+	  <%= f.label 'description' %><br/>
+	  <%= f.text_area :description, :size => '75x3' %>
+	</p>
+	
+	<p>
+	  <%= f.label 'base_piercing', 'Base Piercing' %><br/>
+	  <%= f.text_field :base_piercing, :size => 10 %>
+	</p>
+	
+	<p>
+	  <%= f.label 'base_resistance', 'Base Resistance' %><br/>
+	  <%= f.text_field :base_resistance, :size => 10 %>
+	</p>
+	
+	<p>
+		<%= f.label 'general_id', 'Bonus applies to general:' %><br/>
+		<%= f.collection_select :general_id, General.order(:name), :id, :name, {:include_blank => true} %>
+	</p>
+	
+	<p>
+	  <%= f.label 'bonus_type', 'Bonus Type' %><br/>
+	  <%= f.select :bonus_type, options_for_select(['','attack','defense','energy','stamina','health','crit','other'],@general.bonus_type) %>
+	</p>
+	
+	<p>
+	  <%= f.label 'bonus', 'Bonus' %><br/>
+	  <%= f.text_field :bonus, :size => 10 %>
+	</p>
+	
+	<p>
+		<%= f.label 'url', 'URL to Wikia Image' %>
+		<%= f.text_field :url, :size => 100 %>
+	</p>
+
+	<script type="text/javascript" language="Javascript">
+	  function changeFormat(f)
+	  {
+	    value = f.value.replace(/,/g,"");
+	    f.value = value;
+	  }
+	</script>
+  
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
