@@ -30,7 +30,7 @@ gem 'newrelic_rpm'
 group :development do
   # gem 'seed_dump'
   gem 'thin'
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'debugger'
