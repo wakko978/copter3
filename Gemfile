@@ -24,7 +24,7 @@ end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'mysql2'
+gem 'mysql2', '0.3.11'
 # gem 'activerecord-mysql2-adapter'
 gem 'newrelic_rpm'
 
