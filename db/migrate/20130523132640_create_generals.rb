@@ -8,7 +8,7 @@ class CreateGenerals < ActiveRecord::Migration
       t.integer :attack_increment, :defense_increment, :default => 1
       t.integer :div_power
       t.string :description
-      t.attachment :avatar
+      # t.attachment :avatar
 
       t.timestamps
     end

@@ -6,7 +6,7 @@ class CreatePowers < ActiveRecord::Migration
       t.float :e_attack, :e_defense, :null => false
       t.integer :base_cost, :upkeep, :limit => 8
       t.integer :div_power
-      t.attachment :avatar
+      # t.attachment :avatar
 
       t.timestamps
     end

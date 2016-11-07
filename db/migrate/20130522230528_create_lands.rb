@@ -4,7 +4,7 @@ class CreateLands < ActiveRecord::Migration
       t.string :name, :null => false
       t.integer :base_cost, :income, :limit => 8, :null => false
       t.float :incremental_cost, :null => false
-      t.attachment :avatar
+      # t.attachment :avatar
 
       t.timestamps
     end

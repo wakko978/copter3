@@ -7,7 +7,7 @@ class CreateWeapons < ActiveRecord::Migration
       t.integer :base_cost, :upkeep, :limit => 8
       t.integer :div_power
       t.boolean :forgeable, :default => false
-      t.attachment :avatar
+      # t.attachment :avatar
 
       t.timestamps
     end
