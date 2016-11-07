@@ -9,7 +9,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.integer :army_bonus, :default => 0
       t.string :cage_id
       t.references :user
-      t.attachment :land_file, :general_file, :soldier_file, :item_file, :magic_file
+      # t.attachment :land_file, :general_file, :soldier_file, :item_file, :magic_file
       
       t.timestamps
     end
