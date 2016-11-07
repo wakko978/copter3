@@ -8,7 +8,6 @@ gem 'rails', '3.2.13'
 gem 'devise'
 gem 'will_paginate', '~> 3.0.0'
 gem 'nokogiri'
-gem 'activerecord-mysql2-adapter'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,6 +25,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'mysql2'
+# gem 'activerecord-mysql2-adapter'
 gem 'newrelic_rpm'
 
 group :development do
