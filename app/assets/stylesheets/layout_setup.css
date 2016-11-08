@@ -40,18 +40,18 @@
 
 /* NON-HEADER */
 *{padding:0; margin:0;}
- body {font-size:62.5%; background-color:rgb(255,255,255); font-family:verdana,arial,sans-serif;} /*Font-size: 1.0em = 10px when browser default size is 16px*/
-.page-container {width:1060px; margin:0px auto; margin-top:10px; margin-bottom:10px; font-size:1.0em;}
+ body {font-size:62.5%; background-color:rgb(255,255,255); font-family:verdana,arial,sans-serif;} /*Font-size: 1em = 10px when browser default size is 16px*/
+.page-container {width:1060px; margin:0px auto; margin-top:10px; margin-bottom:10px; font-size:1em;}
 .main {clear:both; width:1054px; padding-bottom:30px; border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175);}
 .main-navigation {display:inline /*Fix IE floating margin bug*/; float:left; width:200px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/; background:rgb(245,245,245);}
 .main-content {display:inline; /*Fix IE floating margin bug*/; float:left; width:990px; margin:0 0 0 30px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
-.footer {clear:both; width:1054px; padding:1.0em 0 1.0em 0; border-top:solid 3px rgb(175,175,175); border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175); border-bottom:solid 3px rgb(175,175,175); background:rgb(225,225,225); font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.footer {clear:both; width:1054px; padding:1em 0 1em 0; border-top:solid 3px rgb(175,175,175); border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175); border-bottom:solid 3px rgb(175,175,175); background:rgb(225,225,225); font-size:1em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
 
 /* HEADER */
 .header {width:1060px;}
 .header-top {width:1054px; height:90px; border-top:solid 3px rgb(175,175,175); border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175); margin-top:10px; background:rgb(235,235,235); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
 .header-bottom {width:1054px; border-bottom:solid 3px rgb(175,175,175); border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175); border-top:solid 1px rgb(175,175,175);}
-.header-breadcrumbs {clear:both; width:1054px; padding:1.0em 0 1.5em 0; border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175);}
+.header-breadcrumbs {clear:both; width:1054px; padding:1em 0 1.5em 0; border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175);}
 .header .round-border-topleft {width:25px; height:25px; position:absolute; z-index:100; background: url("bg_head_corner_topleft_25px.gif") no-repeat; margin-top:-3px; margin-left:-3px;}
 .header .round-border-topright {width:25px; height:25px; position:absolute; z-index:100; background: url("bg_head_corner_topright_25px.gif") no-repeat; margin-top:-3px; margin-left:1032px;}
 
@@ -106,15 +106,15 @@
 /*Non-IE6 hovering*/
 .nav2 ul li:hover {position:relative;} /*Sylvain IE hack*/
 .nav2 ul li:hover a {background-color:rgb(215,215,215); text-decoration:none;} /*Color main cells hovering mode*/
-.nav2 ul li:hover ul {display:block; width:10.0em; position:absolute; z-index:999; top:2.0em; margin-top:0.1em; left:0;}
-.nav2 ul li:hover ul li a {white-space:normal; display:block; width:10.0em; height:auto; line-height:1.3em; margin-left:-1px; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:rgb(240,240,240); font-weight:normal; color:rgb(100,100,100);} /*Color subcells normal mode*/
+.nav2 ul li:hover ul {display:block; width:10em; position:absolute; z-index:999; top:2em; margin-top:0.1em; left:0;}
+.nav2 ul li:hover ul li a {white-space:normal; display:block; width:10em; height:auto; line-height:1.3em; margin-left:-1px; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:rgb(240,240,240); font-weight:normal; color:rgb(100,100,100);} /*Color subcells normal mode*/
 .nav2 ul li:hover ul li a:hover {background-color:rgb(215,215,215); text-decoration:none;} /*Color subcells hovering mode*/
 
 /*IE6 hovering*/
 .nav2 table {position:absolute; top:0; left:-1px; border-collapse:collapse;}
 .nav2 ul li a:hover {position:relative /*Sylvain IE hack*/; z-index:1000 /*Sylvain IE hack*/; background-color:rgb(215,215,215); text-decoration:none;} /*Color main cells hovering mode*/
-.nav2 ul li a:hover ul {display:block; width:10.0em; position:absolute; z-index:999; top:2.1em; t\op:2.0em; left:0; marg\in-top:0.1em;}
-.nav2 ul li a:hover ul li a {white-space:normal; display:block; w\idth:10.0em; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:rgb(240,240,240); font-weight:normal; color:rgb(50,50,50);} /*Color subcells normal mode*/
+.nav2 ul li a:hover ul {display:block; width:10em; position:absolute; z-index:999; top:2.1em; t\op:2em; left:0; marg\in-top:0.1em;}
+.nav2 ul li a:hover ul li a {white-space:normal; display:block; w\idth:10em; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:rgb(240,240,240); font-weight:normal; color:rgb(50,50,50);} /*Color subcells normal mode*/
 .nav2 ul li a:hover ul li a:hover {background-color:rgb(215,215,215); text-decoration:none;} /*Color subcells hovering mode*/
 
 .header-breadcrumbs ul {float:left; width:560px; list-style:none; padding:0 0 0 15px; font-family:verdana,arial,sans-serif;}
@@ -124,8 +124,8 @@
 
 .header-breadcrumbs .searchform {float:right; width:285px; padding:0 17px 0px 0px !important /*Non-IE6*/; padding:0 12px 0px 0px /*IE6*/;}
 .header-breadcrumbs .searchform form fieldset {float:right; border:none;}
-.header-breadcrumbs .searchform input.field {width:10.0em; padding:0.2em 0 0.2em 0; border:1px solid rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:120%; }
-.header-breadcrumbs .searchform input.button {width:3.0em; padding:1px !important /*Non-IE6*/; padding:0 /*IE6*/; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:120%;}
+.header-breadcrumbs .searchform input.field {width:10em; padding:0.2em 0 0.2em 0; border:1px solid rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:120%; }
+.header-breadcrumbs .searchform input.button {width:3em; padding:1px !important /*Non-IE6*/; padding:0 /*IE6*/; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:120%;}
 .header-breadcrumbs .searchform input.button:hover {cursor:pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
 
 /******************/
@@ -145,7 +145,7 @@
 .column3-unit-right {float:right; width:202px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
 
 /* MAIN SUBCONTENT */
-.subcontent-unit-border {width:483px; margin:0 0 2.0em 0; padding:0 0 5px 0; border:solid 1px rgb(190,190,190); background:rgb(235,235,235);}
+.subcontent-unit-border {width:483px; margin:0 0 2em 0; padding:0 0 5px 0; border:solid 1px rgb(190,190,190); background:rgb(235,235,235);}
 .subcontent-unit-border-green {width:483px; margin:2.5em 0 2.5em 0; padding:0 0 10px 0; border:solid 1px rgb(160,214,81); background-color:rgb(217,239,185);}
 .subcontent-unit-border-blue  {width:483px; margin:0 0 2.5em 0; padding:0 0 10px 0; border:solid 1px rgb(137,170,214); background-color:rgb(213,225,240);}
 .subcontent-unit-border-orange {width:483px; margin:0 0 2.5em 0px; padding:0 0 10px 0; border:solid 1px rgb(232,177,13); background-color:rgb(248,224,150);}
@@ -187,10 +187,10 @@
 /********************************/
 @media print {.header-top {width:1054px; height:80px; background:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
 @media print {.header-breadcrumbs {width:1054px; background:transparent;}}
-@media print {.nav2 {float:left; width:1054px; border:none; background:rgb(240,240,240); color:rgb(75,75,75); font-size:1.0em; font-size:130%;}} /*Color navigation bar normal mode*/
+@media print {.nav2 {float:left; width:1054px; border:none; background:rgb(240,240,240); color:rgb(75,75,75); font-size:1em; font-size:130%;}} /*Color navigation bar normal mode*/
 @media print {.main {clear:both; width:1054px; padding-bottom:30px; background:transparent;}}
 @media print {.main-navigation {display:inline /*Fix IE floating margin bug*/; float:left; width:199px; border-right:solid 1px rgb(200,200,200); border-bottom:solid 1px rgb(200,200,200); background-color:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE*/;}}
-@media print {.footer {clear:both; width:1054px; height:3.7em; padding:1.1em 0 0; background:rgb(240,240,240); font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
+@media print {.footer {clear:both; width:1054px; height:3.7em; padding:1.1em 0 0; background:rgb(240,240,240); font-size:1em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
 
 .fieldWithErrors {
   margin-top: -10px;
