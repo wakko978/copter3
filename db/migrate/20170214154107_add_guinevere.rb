@@ -1,9 +1,15 @@
 class AddGuinevere < ActiveRecord::Migration
   def self.up
-    General.find_by_name('Guinevere').update_attribute(:type,'Guinevere')
+    general = General.find_by_name('Guinevere')
+    if general
+      general.update_attribute(:type,'Guinevere')
+    end
   end
 
   def self.down
-    General.find_by_name('Guinevere').update_attribute(:type,'General')
+    general = General.find_by_name('Guinevere')
+    if general
+      general.update_attribute(:type,'General')
+    end
   end
 end
