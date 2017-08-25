@@ -19,7 +19,7 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'yui-compressor'
+#  gem 'yui-compressor'
 end
 
 gem 'jquery-rails'
