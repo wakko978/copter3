@@ -28,6 +28,8 @@ gem 'jquery-ui-rails'
 gem 'mysql2', '0.3.11'
 # gem 'activerecord-mysql2-adapter'
 gem 'newrelic_rpm'
+gem 'puma'
+gem 'sqlite3'
 
 group :development do
   # gem 'seed_dump'
