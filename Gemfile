@@ -24,6 +24,7 @@ end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+#gem 'mysql2'
 gem 'mysql2', '0.3.11'
 # gem 'activerecord-mysql2-adapter'
 gem 'newrelic_rpm'
@@ -34,7 +35,7 @@ group :development do
   # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'debugger'
+#  gem 'debugger'
 end
 
 group :production do
